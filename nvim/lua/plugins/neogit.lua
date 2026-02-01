@@ -9,12 +9,14 @@ return {
     -- { '<Leader>hP', '<cmd>Neogit push<CR>', desc = 'Neogit push' },
     -- { '<Leader>hpp', '<cmd>Neogit pull<CR>', desc = 'Neogit pull' },
   },
-  config = {
+  opts = {
     prompt_force_push = false,
     mappings = {
       popup = {
         ['w'] = false,
         ['W'] = 'WorktreePopup',
+        ['X'] = false,
+        ['<Space>X'] = 'ResetPopup',
       },
     },
   },
