@@ -32,6 +32,7 @@ o.cmdheight = 0
 o.showmode = false
 o.laststatus = 0
 o.showcmdloc = 'tabline'
+o.winborder = 'rounded'
 o.smarttab = true
 o.expandtab = true
 o.tabstop = 2
