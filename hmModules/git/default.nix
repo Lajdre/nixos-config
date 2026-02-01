@@ -3,15 +3,11 @@
 {
   programs.git = {
     enable = true;
-    userName = "Asterikss";
-    userEmail = "AndreAndreM@proton.me";
-    lfs = {
-      enable = true;
-    };
-    ignores = [
-      ".dev/"
-    ];
-    extraConfig = {
+    settings = {
+      user = {
+        name = "Lajdre";
+        email = "AndreAndreM@proton.me";
+      };
       init = {
         defaultBranch = "master";
       };
@@ -21,8 +17,14 @@
       push = {
         autoSetupRemote = true;
       };
-      # merge = { conflictstyle = "diff3"; };
     };
-    delta.enable = true;
+    lfs = {
+      enable = true;
+    };
+  };
+
+  programs.delta = {
+    enable = true;
+    enableGitIntegration = true;
   };
 }
