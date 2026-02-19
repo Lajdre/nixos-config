@@ -20,21 +20,27 @@ in
       opener = {
         pdf_opener = [
           {
-            run = "zathura \"$@\"";
+            run = "zathura %s";
             orphan = true;
           }
           {
-            run = "brave \"$@\"";
+            run = "brave %s";
+            orphan = true;
           }
           {
-            run = "firefox \"$@\"";
+            run = "firefox %s";
+            orphan = true;
+          }
+          {
+            run = "vivaldi %s";
+            orphan = true;
           }
         ];
       };
       open = {
         prepend_rules = [
           {
-            name = "*.pdf";
+            url = "*.pdf";
             use = [
               "pdf_opener"
             ];
