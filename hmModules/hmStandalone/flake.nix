@@ -12,8 +12,9 @@
   outputs =
     { nixpkgs, home-manager, ... }:
     let
-      system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
+      # system = "x86_64-linux";
+      # pkgs = nixpkgs.legacyPackages.${system};
+      pkgs = nixpkgs.legacyPackages.${pkgs.stdenv.hostPlatform.system};
     in
     {
       homeConfigurations."lono" = home-manager.lib.homeManagerConfiguration {
