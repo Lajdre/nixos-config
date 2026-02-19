@@ -23,6 +23,8 @@
     ripdrag
     obs-studio
     dysk
+    tree-sitter
+    nix-your-shell
 
     # dev
     pyright
