@@ -140,6 +140,9 @@ end)
 
 m('n', '<Leader><Leader>p', '<CMD>RenderMarkdown toggle<CR>')
 
+m('n', '<leader>hc', ':!git commit -m""<Left>')
+m('n', '<Leader>hP', '<cmd>!git push<CR>')
+
 -- yank visual selection to clipboard wrapped in code fences
 m('v', 'Y', function()
   vim.cmd('normal! mY"zy`Y')
