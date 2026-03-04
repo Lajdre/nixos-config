@@ -365,6 +365,31 @@ end
 m('n', '<Leader>C', '<cmd>DevChronicles<CR>')
 m('n', '<Leader><Leader>c', RD)
 
+m('n', '<Leader>rr', function()
+  local cmd = 'ruff check --output-format=json ' .. vim.fn.getcwd()
+  local output = vim.fn.system(cmd)
+
+  local ok, diagnostics = pcall(vim.json.decode, output)
+  if not ok then
+    vim.notify('Failed to parse Ruff JSON output', vim.log.levels.ERROR)
+    return
+  end
+
+  local qf = {}
+  for _, d in ipairs(diagnostics) do
+    table.insert(qf, {
+      filename = d.filename,
+      lnum = d.location.row,
+      col = d.location.column,
+      text = string.format('%s [%s]', d.message, d.code),
+      type = 'E',
+    })
+  end
+
+  vim.fn.setqflist(qf, 'r')
+  vim.cmd('copen')
+end, 'RuffQuickfix')
+
 ------ Harpoon + terminal mappings ------
 -- pupulate Harpoon Commands based on the current buffer and run the first command in 1st terminal
 m('n', '<Leader>m', function()
