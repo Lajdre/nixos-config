@@ -2,7 +2,6 @@
 
 {
   home.packages = with pkgs; [
-    # utils
     rip2
     btop
     wget
@@ -25,8 +24,6 @@
     dysk
     tree-sitter
     nix-your-shell
-
-    # dev
     pyright
     lua-language-server
     stylua
@@ -40,14 +37,5 @@
     basedpyright
     nixd
     opencode
-    # rust-analyzer-unwrapped
-    # nodejs_22
-    # gh
-    # quarto
-
-    # build-essential
-    cmake
-    gnumake
-    gcc
   ];
 }
