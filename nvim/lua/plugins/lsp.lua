@@ -84,9 +84,10 @@ return {
 
     local servers = {
       lua_ls = false,
-      pyright = false,
+      basedpyright = false,
       clangd = false,
       ts_ls = false,
+      nixd = false,
     }
 
     for server_name, server_opts in pairs(servers) do
