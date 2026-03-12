@@ -37,6 +37,9 @@
     python3
     just
     ty
+    basedpyright
+    nixd
+    opencode
     # rust-analyzer-unwrapped
     # nodejs_22
     # gh
