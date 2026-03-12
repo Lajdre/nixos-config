@@ -31,9 +31,12 @@
     lua-language-server
     stylua
     uv
-    nixfmt-rfc-style
+    nixfmt
     devenv
     podman-compose
+    python3
+    just
+    ty
     # rust-analyzer-unwrapped
     # nodejs_22
     # gh
