@@ -13,13 +13,14 @@
       set -x DELTA_PAGER "less --mouse"
       set -x SWWW_TRANSITION_FPS 60
       set -x UV_PYTHON_DOWNLOADS "never"
+      nix-your-shell fish | source
     '';
 
     functions = {
-      c = ''cd $argv; and ls'';
-      d = ''cd ..; and ls'';
+      c = "cd $argv; and ls";
+      d = "cd ..; and ls";
       gc = ''git commit -m "$argv"'';
-      clone = ''source ~/.config/scripts/clone.fish $argv'';
+      clone = "source ~/.config/scripts/clone.fish $argv";
     };
 
     shellAliases = {
@@ -39,6 +40,8 @@
       "ccd" = "cd ~/Downloads/";
       "gal" = "swayimg --gallery";
       "gall" = "swayimg --gallery --config='general.size=2200,1000'";
+      "j" = "just";
+      "sp" = "wl-paste | tr ' ' '_' | wl-copy";
 
       # Scripts
       "a" = "source ~/.config/scripts/jump.fish a";
@@ -62,6 +65,7 @@
       "gP" = "git pull";
       "gPf" = "git pull --no-rebase --ff-only";
       "gfiles" = "git ls-files";
+      "gl" = "git log";
 
       # Docker
       "di" = "docker images";
