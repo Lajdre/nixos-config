@@ -1,7 +1,7 @@
 local Job = require('plenary.job')
 
-local function m(a, b, v)
-  vim.keymap.set(a, b, v, { noremap = true })
+local function m(a, b, v, desc)
+  vim.keymap.set(a, b, v, { noremap = true, desc = desc })
 end
 
 m({ 'n', 'v' }, '<Space>', '<Nop>')
@@ -70,7 +70,6 @@ m('n', '<Esc>', '<cmd>nohl<Cr>')
 
 -- C-v, but it will immediately format the line according to the textwidth, if set
 m('i', '<M-C-V>', '<C-R>+')
--- TODO? make it so that the text is not formattet when not in .md etc. I think removing textwidth does not change anything.
 m('n', '<M-C-V>', function()
   vim.cmd('normal "+p')
   vim.cmd('normal gqq')
@@ -82,13 +81,14 @@ m('n', 'cc', 'C')
 m('n', 'f', 'V')
 m('n', 'F', 'v')
 m('n', 'v', 'dd')
+m('x', 'v', 'd')
 m('n', 'z', 'v')
 m({ 'n', 'v' }, 'e', '<C-d>')
 m({ 'n', 'v' }, 'w', '<C-u>')
 m('n', 'H', 'n')
 m('n', 'L', 'N')
-m('n', 'm', 'e')
-m('n', 'M', 'E')
+m({ 'n', 'v' }, 'm', 'e')
+m({ 'n', 'v' }, 'M', 'E')
 m({ 'n', 'v' }, 'n', 'w')
 m({ 'n', 'v' }, 'N', 'W')
 m({ 'n', 'v' }, 'D', 'w')
@@ -99,7 +99,7 @@ m('n', 'yy', 'y$')
 
 m('n', 'J', 'mzJ`z')
 
-m('n', '<', '<<') -- delay like there is multiple keymaps that start with "<" and does not even show up in Telescope keymaps
+m('n', '<', '<<')
 m('n', '>', '>>')
 
 m('n', '<A-p>', "<cmd>pu<CR>V'[=") -- paste under / over and automatically allign using "=". Also see :h ]p and [P
