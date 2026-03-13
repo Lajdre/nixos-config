@@ -349,23 +349,32 @@ R = function(name, skip_setup)
   return require(name)
 end
 
-RD = function()
-  local _, session_active = require('dev-chronicles.core.state').get_session_info(true)
-  RELOAD('dev-chronicles')
-  require('dev-chronicles').setup({
-    tracked_parent_dirs = { '~/projects/zzpackage/', '~/projects/' },
-    tracked_dirs = { '~/nixos-config/' },
-    runtime_opts = {
-      for_dev_start_time = session_active and session_active.start_time,
-    },
-    min_session_time = 0,
-  })
-  require('dev-chronicles').start_session()
-  vim.notify('Dev-chronicles reloaded')
-end
-
 m('n', '<Leader>C', '<cmd>DevChronicles<CR>')
-m('n', '<Leader><Leader>c', RD)
+m('n', '<Leader><Leader>c', function()
+  local plugin_opts = require('plugins.dev-chronicles').opts
+  local session_base, session_active = require('dev-chronicles.core.state').get_session_info(true)
+  RELOAD('dev-chronicles')
+
+  if not session_active then
+    require('dev-chronicles').setup(plugin_opts) ---@diagnostic disable-line: different-requires
+  else
+    local for_dev_state_override = {
+      project_id = session_active.project_id,
+      project_name = session_active.project_name,
+      start_time = session_active.start_time,
+      elapsed_so_far = session_active.elapsed_so_far,
+      changes = session_base.changes,
+      is_tracking = true,
+    }
+    require('dev-chronicles').setup( ---@diagnostic disable-line: different-requires
+      vim.tbl_deep_extend('force', plugin_opts, {
+        runtime_opts = { for_dev_state_override = for_dev_state_override },
+      })
+    )
+  end
+  require('dev-chronicles').start_session() ---@diagnostic disable-line: different-requires
+  vim.notify('Dev-chronicles reloaded')
+end)
 
 m('n', '<Leader>rr', function()
   local cmd = 'ruff check --output-format=json ' .. vim.fn.getcwd()
