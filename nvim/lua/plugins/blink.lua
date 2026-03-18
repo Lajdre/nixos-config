@@ -54,14 +54,15 @@ return {
         },
       },
     },
-    keyword = {
-      -- https://github.com/Saghen/blink.cmp/issues/758
-      -- https://github.com/LazyVim/LazyVim/issues/5243
-      -- Regex used to get the text when fuzzy matching
-      -- regex = '[/*-_@]\\|\\k',
-      -- After matching with regex, any characters matching this regex at the prefix will be excluded (fix luadoc completions)
-      exclude_from_prefix_regex = '[,]',
-    },
+    -- keyword = {
+    --   -- https://github.com/Saghen/blink.cmp/issues/758
+    --   -- https://github.com/LazyVim/LazyVim/issues/5243
+    --   -- Regex used to get the text when fuzzy matching
+    --   -- regex = '[/*-_@]\\|\\k',
+    --   -- After matching with regex, any characters matching this regex at the prefix will be excluded (fix luadoc completions)
+    --   -- https://github.com/saghen/blink.cmp/issues/808
+    --   exclude_from_prefix_regex = '[,]',
+    -- },
     cmdline = {
       keymap = { preset = 'inherit' },
       completion = { menu = { auto_show = true } },
