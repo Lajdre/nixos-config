@@ -16,6 +16,9 @@
     jq
     ripgrep
     fd
+    cmake
+    gnumake
+    gcc
     calcurse
     ffmpeg
     py7zr
