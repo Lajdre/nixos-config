@@ -1,6 +1,6 @@
 {
   pkgs,
-  inputs,
+  lib,
   ...
 }:
 
@@ -51,6 +51,12 @@
       kitty
     ]
   );
+
+  nixpkgs.config.allowUnfreePredicate =
+    pkg:
+    builtins.elem (lib.getName pkg) [
+      "vivaldi"
+    ];
 
   # ++
   #
