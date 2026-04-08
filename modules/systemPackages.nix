@@ -37,6 +37,7 @@
       overskride
       gcolor3
       simple-mtpfs
+      v4l-utils
 
       # screenshot utils
       grim
