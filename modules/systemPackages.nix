@@ -10,7 +10,7 @@
     [
       # core
       waybar
-      swww
+      awww
       rofi
       wl-clipboard
       swaynotificationcenter

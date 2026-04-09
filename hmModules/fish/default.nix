@@ -11,7 +11,7 @@
       set -x FZF_PREVIEW_OPTS "--preview-window=right:50%:wrap"
       set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
       set -x DELTA_PAGER "less --mouse"
-      set -x SWWW_TRANSITION_FPS 60
+      set -x AWWW_TRANSITION_FPS 60
       set -x UV_PYTHON_DOWNLOADS "never"
       nix-your-shell fish | source
     '';
