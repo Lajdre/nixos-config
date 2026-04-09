@@ -24,6 +24,7 @@
       hosts = [
         "master"
         "lap"
+        "amir"
       ];
     in
     {
