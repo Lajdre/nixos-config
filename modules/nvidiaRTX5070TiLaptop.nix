@@ -13,5 +13,10 @@
     powerManagement.enable = false;
     powerManagement.finegrained = false;
     package = config.boot.kernelPackages.nvidiaPackages.latest;
+    prime = {
+      sync.enable = true;
+      amdgpuBusId = "PCI:64:0:0";
+      nvidiaBusId = "PCI:63:0:0";
+    };
   };
 }
