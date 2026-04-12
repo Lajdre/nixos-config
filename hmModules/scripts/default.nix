@@ -26,6 +26,11 @@
     executable = true;
   };
 
+  home.file.".config/scripts/initSystemStructure.sh" = {
+    source = ./initSystemStructure.sh;
+    executable = true;
+  };
+
   home.file.".config/scripts/wall.sh" = {
     text = ''
       #!/usr/bin/env bash
