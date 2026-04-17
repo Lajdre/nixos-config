@@ -13,16 +13,13 @@
     ];
   };
 
-  # Enable the Flakes feature and the accompanying new nix command-line tool
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
   ];
 
-  # Set your time zone.
   time.timeZone = "Europe/Warsaw";
 
-  # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
   i18n.extraLocaleSettings = {
@@ -37,15 +34,12 @@
     LC_TIME = "pl_PL.UTF-8";
   };
 
-  # Configure console keymap
   console.keyMap = "pl2";
 
-  # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
   boot.loader.systemd-boot.configurationLimit = 15;
-  # boot.loader.grub.configurationLimit = 15;
 
   nix.settings.auto-optimise-store = true;
 
