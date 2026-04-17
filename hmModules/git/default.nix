@@ -21,6 +21,7 @@
     lfs = {
       enable = true;
     };
+    signing.format = "openpgp";
   };
 
   programs.delta = {
