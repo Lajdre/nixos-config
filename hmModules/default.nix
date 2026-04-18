@@ -23,5 +23,6 @@
     ./mpv
     ./sioyek
     ./userDirs
+    ./waybar
   ];
 }

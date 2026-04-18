@@ -1,0 +1,122 @@
+// -*- mode: jsonc -*-
+{
+  "layer": "top",
+  "position": "top",
+  "margin-top": 10,
+  "margin-left": 14,
+  "margin-right": 14,
+  "height": 28,
+  "spacing": 0,
+  "start_hidden": true,
+  "exclusive": false,
+
+  "modules-left": [
+    "group/island-left"
+  ],
+
+  "modules-center": [
+    "clock"
+  ],
+
+  "modules-right": [
+    "group/island-right"
+  ],
+
+  "group/island-left": {
+    "orientation": "horizontal",
+    "modules": [
+      "hyprland/workspaces",
+      "tray"
+    ]
+  },
+
+  "group/island-right": {
+    "orientation": "horizontal",
+    "modules": [
+      "pulseaudio",
+      "network",
+      "battery",
+      "backlight",
+      "cpu",
+      "memory"
+    ]
+  },
+
+  "clock": {
+    "format": "{:%H:%M}",
+    "format-alt": "{:%H:%M  %d %B %Y}",
+    "on-click": "mode",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode": "year",
+      "mode-mon-col": 3,
+      "weeks-pos": "right",
+      "format": {
+        "months":   "<span color='#c8ccd4'><b>{}</b></span>",
+        "days":     "<span color='#c8ccd4'>{}</span>",
+        "weeks":    "<span color='#7aa2f7'><b>W{}</b></span>",
+        "weekdays": "<span color='#e0af68'><b>{}</b></span>",
+        "today":    "<span color='#41a6b5'><b><u>{}</u></b></span>"
+      }
+    }
+  },
+
+  "pulseaudio": {
+    "format": "{volume}% {icon} {format_source}",
+    "format-bluetooth": "{volume}% {icon} {format_source}",
+    "format-bluetooth-muted": " {icon} {format_source}",
+    "format-muted": " {format_source}",
+    "format-source": "{volume}% ",
+    "format-source-muted": "",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "󰋎",
+      "headset": "󰋎",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", "", ""]
+    },
+    "on-click": "pavucontrol"
+  },
+
+  "backlight": {
+    "format": "{icon}",
+    "tooltip-format": "{percent}%",
+    "format-icons": ["󰃞", "󰃝", "󰃟", "󰃠"]
+  },
+
+  "network": {
+    "interval": 10,
+    "format-disabled": "󰤭",
+    "format-disconnected": "󰤭",
+    "format-wifi": "󰤨",
+    "format-ethernet": "󰈀",
+    "tooltip-format": "{essid}\n\nFrequency: {frequency}GHz\nStrength: {signalStrength}%\n\n󰕒 {bandwidthUpBytes}   󰇚 {bandwidthDownBytes}"
+  },
+
+  "battery": {
+    "interval": 180,
+    "full-at": 100,
+    "tooltip": true,
+    "format-full": "",
+    "format": "{icon} {capacity}%",
+    "format-charging": "󰂄 {capacity}%",
+    "format-plugged": "󰚥 {capacity}%",
+    "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+    "states": {
+      "warning": 25,
+      "critical": 10
+    }
+  },
+
+  "cpu": {
+    "format": "{usage}% ",
+    "tooltip": false,
+    "on-click": "notify-send \"CPU Temperature\" \"$(sensors 2>/dev/null | grep -E 'Tctl|Package id 0' | head -1 | awk '{print $2}')\""
+  },
+
+  "memory": {
+    "format": "{}% "
+  }
+}

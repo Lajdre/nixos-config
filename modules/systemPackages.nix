@@ -9,7 +9,6 @@
     with pkgs;
     [
       # core
-      waybar
       awww
       rofi
       wl-clipboard

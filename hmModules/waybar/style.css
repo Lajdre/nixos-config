@@ -1,0 +1,160 @@
+* {
+  font-family: "Agave Nerd Font Propo", "Symbols Nerd Font", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+}
+
+window#waybar {
+  background: transparent;
+  color: #c8ccd4;
+}
+
+/* ── The three islands ────────────────────────────────────────────────── */
+#island-left,
+#clock,
+#island-right {
+  background: rgba(15, 15, 23, 0.88);
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 0 14px;
+}
+
+/* ── Shared module padding ─────────────────────────────────────────────── */
+#workspaces,
+#tray,
+#clock,
+#pulseaudio,
+#network,
+#battery,
+#backlight,
+#cpu,
+#memory {
+  padding: 2px 8px;
+  color: #c8ccd4;
+}
+
+#workspaces {
+  padding: 2px 4px;
+}
+
+#workspaces button {
+  color: #4a4e69;
+  font-size: 14px;
+  padding: 0 4px;
+  margin: 0 2px;
+  border-radius: 100%;
+  background: transparent;
+  transition: color 150ms ease;
+}
+
+#workspaces button:hover {
+  background: transparent;
+  color: #7aa2f7;
+  box-shadow: none;
+}
+
+#workspaces button.active {
+  color: #7aa2f7;
+}
+
+#workspaces button.urgent {
+  color: #f7768e;
+}
+
+/* ── Tray ─────────────────────────────────────────────────────────────── */
+#tray {
+  border-left: 1px solid rgba(255, 255, 255, 0.07);
+  padding-left: 12px;
+}
+
+#tray > .passive {
+  -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+}
+
+/* ── Clock ────────────────────────────────────────────────────────────── */
+#clock {
+  padding: 2px 20px;
+  color: #c8ccd4;
+  letter-spacing: 0.5px;
+}
+
+/* ── Volume ───────────────────────────────────────────────────────────── */
+#pulseaudio {
+  color: #bb9af7;
+}
+
+#pulseaudio.muted {
+  color: #4a4e69;
+}
+
+/* ── Network ──────────────────────────────────────────────────────────── */
+#network {
+  color: #9ece6a;
+}
+
+#network.disconnected,
+#network.disabled {
+  color: #4a4e69;
+}
+
+/* ── Battery ──────────────────────────────────────────────────────────── */
+#battery {
+  color: #9ece6a;
+}
+
+#battery.charging,
+#battery.plugged {
+  color: #73daca;
+}
+
+#battery.warning {
+  color: #e0af68;
+}
+
+#battery.critical:not(.charging) {
+  color: #f7768e;
+  animation: blink 1s linear infinite;
+}
+
+/* ── Backlight ────────────────────────────────────────────────────────── */
+#backlight {
+  color: #e0af68;
+}
+
+/* ── CPU ──────────────────────────────────────────────────────────────── */
+#cpu {
+  color: #7aa2f7;
+}
+
+/* ── Memory ───────────────────────────────────────────────────────────── */
+#memory {
+  color: #2ac3de;
+}
+
+/* ── Tooltip ──────────────────────────────────────────────────────────── */
+tooltip {
+  background: rgba(15, 15, 23, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
+  color: #c8ccd4;
+}
+
+tooltip label {
+  padding: 4px 10px;
+  color: #c8ccd4;
+  font-weight: 700;
+}
+
+/* ── Blink ────────────────────────────────────────────────────────────── */
+@keyframes blink {
+  to { opacity: 0.35; }
+}
