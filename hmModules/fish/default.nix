@@ -42,6 +42,7 @@
       "gall" = "swayimg --gallery --config='general.size=2200,1000'";
       "j" = "just";
       "sp" = "wl-paste | tr ' ' '_' | wl-copy";
+      "cam" = "ffplay -f v4l2 -input_format mjpeg -video_size 1920x1080 -framerate 60 /dev/video0";
 
       # Scripts
       "a" = "source ~/.config/scripts/jump.fish a";
