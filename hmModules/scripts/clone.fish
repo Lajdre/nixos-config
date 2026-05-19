@@ -1,10 +1,10 @@
 #!/usr/bin/env fish
 
 # Clone git repos as bare with optional worktree.
-# Flags: b=blank (no worktree), z=zzpackage dir, m=use main branch
+# Flags: b=blank (no worktree), z=zzpackage dir, s=zzsilent dir, m=use main branch
 
 if test (count $argv) -lt 1
-  echo "Usage: clone <repository-url> [b] [z] [m]"
+  echo "Usage: clone <repository-url> [b] [z] [s] [m]"
   return 1
 end
 
@@ -14,13 +14,27 @@ set repo_name (basename $repo_url .git)
 
 set flags (string split "" -- (string join "" -- $argv[2..]))
 
+if contains z $flags && contains s $flags
+  echo "Error: flags 'z' and 's' are mutually exclusive"
+  return 1
+end
+
 set base_dir ~/projects
 
 if contains z $flags
   set base_dir ~/projects/zzpackage
+else if contains s $flags
+  set base_dir ~/projects/zzsilent
 end
 
-set target_dir $base_dir/$repo_name/.gitt
+set repo_dir $base_dir/$repo_name
+
+if test -d $repo_dir
+  echo "Error: directory already exists: $repo_dir"
+  return 1
+end
+
+set target_dir $repo_dir/.gitt
 
 git clone --bare $repo_url $target_dir
 
@@ -31,7 +45,7 @@ else
   echo "Cloned successfully ($repo_name)"
 end
 
-set curr_wtree_file (dirname $target_dir)/.curr_wtree
+set curr_wtree_file $repo_dir/.curr_wtree
 
 if not contains b $flags
   set branch master
@@ -46,6 +60,7 @@ if not contains b $flags
   if test $status -eq 0
     echo "Worktree added at ../$branch"
     echo $branch > $curr_wtree_file
+    cd $repo_dir/$branch; and ls
   else
     echo "Failed to add worktree"
     echo "." > $curr_wtree_file
@@ -54,6 +69,5 @@ if not contains b $flags
 else
   echo "Blank mode enabled. No worktree added."
   echo "." > $curr_wtree_file
+  cd $repo_dir; and ls
 end
-
-cd (dirname $target_dir); and ls
