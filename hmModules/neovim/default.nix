@@ -38,10 +38,12 @@ in
     withPython3 = true;
     withRuby = true;
     withNodeJs = false;
+    sideloadInitLua = true;
 
-    plugins = [
-      treesitterWithGrammars
-    ];
+    # this seems like a duplication (then a dir plugin is not needed)
+    # plugins = [
+    #   treesitterWithGrammars
+    # ];
   };
 
   home.file.".config/nvim/" = {
