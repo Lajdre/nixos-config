@@ -6,6 +6,7 @@
     btop
     wget
     unzip
+    zip
     fzf
     fastfetch
     syncthing
@@ -40,5 +41,7 @@
     basedpyright
     nixd
     opencode
+    lazydocker
+    gh-dash
   ];
 }
