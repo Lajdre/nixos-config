@@ -172,13 +172,13 @@ return {
       builtin.find_files({ cwd = '~/cave/vault/', previewer = false })
     end, { desc = 'Search Vault' })
 
+    vim.keymap.set('n', '<leader><A-k>', function()
+      builtin.find_files({ cwd = '~/cave/kkk/', previewer = false })
+    end, { desc = 'Search kkk' })
+
     vim.keymap.set('n', '<leader>K', function()
       builtin.find_files({ cwd = '~/cave/notes_proj/' })
     end, { desc = 'search Proj Notes' })
-
-    vim.keymap.set('n', '<leader>sk', function()
-      builtin.find_files({ cwd = '~/cave/kkk/' })
-    end, { desc = '[S]search [K] Notes' })
 
     vim.keymap.set('n', '<Leader>f', function()
       builtin.find_files(themes.get_dropdown {
@@ -187,7 +187,7 @@ return {
       })
     end, { desc = 'Search [F]iles' })
 
-    vim.keymap.set('n', '<Leader>t', function()
+    vim.keymap.set('n', '<Leader><A-f>', function()
       builtin.find_files(themes.get_dropdown {
         previewer = false,
         cwd = 'tests',
