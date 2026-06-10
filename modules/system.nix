@@ -10,6 +10,7 @@
       "podman"
       "lp"
       "scanner"
+      "video"
     ];
   };
 
@@ -36,10 +37,14 @@
 
   console.keyMap = "pl2";
 
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-
-  boot.loader.systemd-boot.configurationLimit = 15;
+  boot.loader = {
+    systemd-boot = {
+      enable = true;
+      configurationLimit = 15;
+    };
+    efi.canTouchEfiVariables = true;
+    timeout = 2;
+  };
 
   nix.settings.auto-optimise-store = true;
 
