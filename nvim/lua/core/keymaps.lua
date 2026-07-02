@@ -159,9 +159,9 @@ m('v', 'Y', function()
   vim.fn.setreg('+', formatted_text)
 end)
 
-m('n', 'gy', '<CMD>silent %y+<CR>')
+m('n', 'gY', '<CMD>silent %y+<CR>')
 
-m('n', 'gY', function()
+m('n', 'gy', function()
   local ft = vim.bo.filetype == '' and 'text' or vim.bo.filetype
   vim.fn.setreg('+', '```' .. ft .. '\n' .. table.concat(vim.api.nvim_buf_get_lines(0, 0, -1, false), '\n') .. '\n```')
 end)
