@@ -42,6 +42,7 @@
     nixd
     opencode
     lazydocker
+    gh
     gh-dash
   ];
 }
