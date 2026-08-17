@@ -41,6 +41,7 @@ o.shiftwidth = 0
 o.autoindent = true
 o.smartindent = true
 o.list = true
+o.cinwords = {}
 o.listchars = {
   trail = '»',
   tab = '⫸_',
