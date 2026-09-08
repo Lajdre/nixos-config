@@ -44,5 +44,9 @@
     lazydocker
     gh
     gh-dash
+    gopass
+    gnupg
+    pinentry-rofi
+    tessen
   ];
 }
