@@ -12,5 +12,7 @@
     ./systemPackages.nix
     ./virtualisation.nix
     ./fonts.nix
+    ./keyring.nix
+    ./overlays.nix
   ];
 }
