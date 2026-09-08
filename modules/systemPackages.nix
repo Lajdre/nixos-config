@@ -28,6 +28,7 @@
       gimp3
       zathura
       firefox
+      element-desktop
 
       # utils
       brightnessctl
@@ -37,6 +38,7 @@
       gcolor3
       simple-mtpfs
       v4l-utils
+      impala
 
       # screenshot utils
       grim
