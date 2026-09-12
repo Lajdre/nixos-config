@@ -38,13 +38,19 @@
             modules = [
               ./hosts/${host}/configuration.nix
               home-manager.nixosModules.home-manager
-              {
-                home-manager.useGlobalPkgs = true;
-                home-manager.useUserPackages = true;
-                home-manager.users.lono = import ./hosts/${host}/home.nix;
-                home-manager.backupFileExtension = "backup";
-                home-manager.extraSpecialArgs = { inherit host; };
-              }
+              (
+                { config, ... }:
+                {
+                  home-manager.useGlobalPkgs = true;
+                  home-manager.useUserPackages = true;
+                  home-manager.users.lono = import ./hosts/${host}/home.nix;
+                  home-manager.backupFileExtension = "backup";
+                  home-manager.extraSpecialArgs = {
+                    inherit host;
+                    hyprlandPackage = config.programs.hyprland.package;
+                  };
+                }
+              )
             ];
           };
         }) hosts
