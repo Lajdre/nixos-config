@@ -49,5 +49,6 @@
     pinentry-rofi
     tessen
     openvpn
+    clang-tools
   ];
 }
