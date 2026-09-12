@@ -108,13 +108,13 @@ m('n', '<A-P>', "<cmd>pu!<CR>V']=")
 m('n', 'P', '<cmd>pu!<CR>')
 -- m('x', 'p', '"_dP') -- paste without trashing the clippboard. Not needed when using Ctrl-c
 
--- m('n', 't', 'yiw') -- make it keep the position
+-- m('n', 't', 'yiw')
 -- m('n', 'T', 'viw"_dP')
 -- m('n', '<A-t>', 'yiW')
 -- m('n', '<A-T>', 'viW"_dP')
-m('n', 'r', 'yiw') -- make it keep the position
+m('n', 'r', "m'yiw`'")
 m('n', 'R', 'viw"_dP')
-m('n', '<A-r>', 'yiW')
+m('n', '<A-r>', "m'yiW`'")
 m('n', '<A-R>', 'viW"_dP')
 m('n', 't', 'r')
 m('n', 'T', 'R')
