@@ -48,5 +48,6 @@
     gnupg
     pinentry-rofi
     tessen
+    openvpn
   ];
 }
