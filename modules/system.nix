@@ -11,6 +11,7 @@
       "lp"
       "scanner"
       "video"
+      "libvirtd"
     ];
   };
 
