@@ -4,7 +4,7 @@ if test "$argv[1]" = "a"; or test "$argv[1]" = "s"
   # just dirs -> cd (or nvim . if 's')
   set selected (
     begin
-      fd -t d -d 1 . ~/projects ~/cave/ ~/projects/zzpackage/
+      fd -t d -d 1 . ~/projects ~/cave/ ~/projects/zzpackage/ ~/projects/zzsilent/
       echo ~/nixos-config/
     end | sed "s|^$HOME/||" | fzf --height 40% --layout reverse --border)
   if test -n "$selected"

@@ -13,6 +13,7 @@ DIRS=(
   "$HOME/cave/kkk"
   "$HOME/projects"
   "$HOME/projects/zzpackage"
+  "$HOME/projects/zzsilent"
 )
 
 for dir in "${DIRS[@]}"; do
