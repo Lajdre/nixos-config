@@ -14,5 +14,6 @@
     ./fonts.nix
     ./keyring.nix
     ./overlays.nix
+    ./ld.nix
   ];
 }
