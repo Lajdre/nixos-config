@@ -21,6 +21,11 @@
       d = "cd ..; and ls";
       gc = ''git commit -m "$argv"'';
       clone = "source ~/.config/scripts/clone.fish $argv";
+      tre = ''
+        set -l extra (string join '|' $argv)
+        set -l ignore '.git|.venv|venv|env|__pycache__|*.pyc|*.pyo|.pytest_cache|.mypy_cache|.ruff_cache|node_modules|.next|dist|build|*.egg-info|.DS_Store|.idea|.vscode|coverage|.coverage|htmlcov|*.log|*.lock|.cache|.tox|.eggs'
+        tree -a -I (test -n "$extra"; and echo "$ignore|$extra"; or echo "$ignore") | tee /dev/tty | wl-copy
+      '';
     };
 
     shellAliases = {
