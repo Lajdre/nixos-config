@@ -11,7 +11,7 @@ let
   machines = {
     master = {
       mainMonitorName = "DP-4";
-      mode = "2560x1440@60";
+      mode = "2560x1440@165.15";
       scale = "1";
       hasBuiltinDisplay = false;
     };
