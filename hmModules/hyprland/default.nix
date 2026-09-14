@@ -120,6 +120,15 @@ in
 
   home.file.".config/hypr_per_host/conf/monitor.conf".text = monitorConfText;
 
+  home.file.".config/hypr_per_host/machine.lua".text = ''
+    return {
+      output = "${machine.mainMonitorName}",
+      mode = "${machine.mode}",
+      scale = ${machine.scale},
+      hasBuiltinDisplay = ${lib.boolToString machine.hasBuiltinDisplay},
+    };
+  '';
+
   home.file.".config/hypr/" = {
     source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-config/hmModules/hyprland/hypr/";
     recursive = true;

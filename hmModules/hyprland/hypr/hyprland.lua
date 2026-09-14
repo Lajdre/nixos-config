@@ -1,0 +1,7 @@
+require('conf_lua/monitors')
+require('conf_lua/variables')
+require('conf_lua/autostart')
+require('conf_lua/animations')
+require('conf_lua/windowrules')
+require('conf_lua/general')
+require('conf_lua/keybindings')
