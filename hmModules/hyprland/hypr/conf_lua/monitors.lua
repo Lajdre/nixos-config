@@ -19,9 +19,18 @@ if machine.hasBuiltinDisplay then
         externalConnected = true
       end
     end
-    if externalConnected ~= builtinDisabled then
-      builtinDisabled = externalConnected
-      hl.monitor({ output = machine.output, disabled = externalConnected })
+    if externalConnected and not builtinDisabled then
+      builtinDisabled = true
+      hl.monitor({ output = machine.output, disabled = true })
+    elseif not externalConnected and builtinDisabled then
+      builtinDisabled = false
+      hl.monitor({
+        output = machine.output,
+        mode = machine.mode,
+        position = '0x0',
+        scale = machine.scale,
+        disabled = false,
+      })
     end
   end
 
@@ -44,6 +53,7 @@ if machine.hasBuiltinDisplay then
       mode = machine.mode,
       position = '0x0',
       scale = machine.scale,
+      disabled = false,
     })
   end)
 end
