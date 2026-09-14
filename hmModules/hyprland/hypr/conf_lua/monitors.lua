@@ -16,7 +16,8 @@ if machine.hasBuiltinDisplay then
     local externalConnected = false
     local names = {} --
     for _, m in ipairs(hl.get_monitors()) do
-      if m.name ~= machine.output then
+      -- FALLBACK is the virtual output Hyprland spawns when no real monitor is active
+      if m.name ~= machine.output and m.name ~= 'FALLBACK' then
         externalConnected = true
       end
       names[#names + 1] = m.name --
