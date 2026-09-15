@@ -109,7 +109,7 @@ let
   '';
 in
 {
-  systemd.user.services.hypr-display-switcher = lib.mkIf machine.hasBuiltinDisplay {
+  systemd.user.services.hypr-display-switcher = lib.mkIf false {
     Unit.Description = "Enables/disables builtin display on hotplug";
 
     Service = {

@@ -14,39 +14,17 @@ if machine.hasBuiltinDisplay then
 
   local function refresh()
     local externalConnected = false
-    local names = {} --
     for _, m in ipairs(hl.get_monitors()) do
       -- FALLBACK is the virtual output Hyprland spawns when no real monitor is active
       if m.name ~= machine.output and m.name ~= 'FALLBACK' then
         externalConnected = true
       end
-      names[#names + 1] = m.name --
-    end
-
-    local f = io.open('/tmp/hypr-builtin-reenable.log', 'a') --
-    if f then
-      f:write(
-        os.date('%Y-%m-%d %H:%M:%S')
-          .. ' externalConnected='
-          .. tostring(externalConnected)
-          .. ' builtinDisabled='
-          .. tostring(builtinDisabled)
-          .. ' monitors='
-          .. table.concat(names, ',')
-          .. '\n'
-      )
-      f:close()
     end
 
     if externalConnected and not builtinDisabled then
       builtinDisabled = true
       hl.monitor({ output = machine.output, disabled = true })
     elseif not externalConnected and builtinDisabled then
-      local f = io.open('/tmp/hypr-builtin-reenable.log', 'a') --
-      if f then
-        f:write(os.date('%Y-%m-%d %H:%M:%S') .. ' re-enable path fired\n')
-        f:close()
-      end
       builtinDisabled = false
       hl.monitor({
         output = machine.output,
