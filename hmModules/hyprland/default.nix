@@ -129,6 +129,8 @@ in
     };
   '';
 
+  home.file.".config/hypr-lua-stubs".source = "${hyprlandPackage}/share/hypr/stubs";
+
   home.file.".config/hypr/" = {
     source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-config/hmModules/hyprland/hypr/";
     recursive = true;

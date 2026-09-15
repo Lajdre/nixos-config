@@ -1,0 +1,8 @@
+{
+  "runtime": {
+    "version": "Lua 5.5"
+  },
+  "workspace": {
+    "library": ["/home/lono/.config/hypr-lua-stubs"]
+  }
+}
