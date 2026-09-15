@@ -51,29 +51,29 @@ hl.config({
     mfact = 0.5,
   },
 
-    misc = {
-        force_default_wallpaper = -1,
-        disable_hyprland_logo = false,
-        disable_splash_rendering = true,
+  misc = {
+    force_default_wallpaper = 0,
+    disable_hyprland_logo = true,
+    disable_splash_rendering = true,
+  },
+
+  input = {
+    kb_layout = 'pl',
+    kb_variant = '',
+    kb_model = '',
+    kb_options = '',
+    kb_rules = '',
+
+    sensitivity = -0.15,
+    accel_profile = 'flat',
+    follow_mouse = 2,
+
+    touchpad = {
+      natural_scroll = true,
     },
+  },
 
-    input = {
-        kb_layout = 'pl',
-        kb_variant = '',
-        kb_model = '',
-        kb_options = '',
-        kb_rules = '',
-
-        sensitivity = -0.15,
-        accel_profile = 'flat',
-        follow_mouse = 2,
-
-        touchpad = {
-            natural_scroll = true,
-        },
-    },
-
-    cursor = {
-        hide_on_key_press = true,
-    },
+  cursor = {
+    hide_on_key_press = true,
+  },
 })

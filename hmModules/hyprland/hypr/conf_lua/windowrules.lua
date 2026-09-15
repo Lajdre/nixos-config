@@ -1,11 +1,5 @@
 -- WINDOWRULES
 
--- Fullscreen
-hl.window_rule({
-  match = { class = 'Gimp.*' },
-  fullscreen = true,
-})
-
 -- Floating
 hl.window_rule({
   match = { class = 'swayimg' },
@@ -26,7 +20,8 @@ hl.window_rule({
 })
 
 -- Common Modals
-local modalTitles = { 'Open', 'Choose Files', 'Save As', 'Confirm to replace files', 'File Operation Progress' }
+local modalTitles =
+  { 'Open', 'Choose Files', 'Save As', 'Confirm to replace files', 'File Operation Progress' }
 for _, title in ipairs(modalTitles) do
   hl.window_rule({
     match = { title = title },
@@ -54,15 +49,13 @@ hl.window_rule({
   workspace = '2 silent',
 })
 
--- Ignore maximize requests from all apps
-local suppressMaximizeRule = hl.window_rule({
+-- Other rules
+hl.window_rule({
   name = 'suppress-maximize-events',
   match = { class = '.*' },
   suppress_event = 'maximize',
 })
--- suppressMaximizeRule:set_enabled(false)
 
--- Fix some dragging issues with XWayland
 hl.window_rule({
   name = 'fix-xwayland-drags',
   match = {
