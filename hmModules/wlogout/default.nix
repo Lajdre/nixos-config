@@ -20,22 +20,19 @@
       }
       {
         "label" = "logout";
-        "action" = "hyprctl dispatch exit 0";
+        "action" = "hyprshutdown";
         "text" = "Logout";
-        "keybind" = "e";
-        # "action" = "loginctl terminate-user $USER";
-        # "action" = "hyprctl dispatch exit";
-        # "action" : "hyprctl dispatch exit 0",
+        "keybind" = "o";
       }
       {
         "label" = "shutdown";
-        "action" = "systemctl poweroff";
+        "action" = "hyprshutdown --post-cmd poweroff";
         "text" = "Shutdown";
         "keybind" = "s";
       }
       {
         "label" = "reboot";
-        "action" = "systemctl reboot";
+        "action" = "hyprshutdown --post-cmd reboot";
         "text" = "Reboot";
         "keybind" = "r";
       }
