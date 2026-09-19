@@ -18,6 +18,7 @@
       hyprsunset
       pavucontrol
       alsa-utils
+      hyprshutdown
 
       # apps
       swayimg
@@ -36,7 +37,6 @@
       xarchiver
       overskride
       gcolor3
-      simple-mtpfs
       v4l-utils
       impala
 
