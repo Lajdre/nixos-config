@@ -82,18 +82,8 @@ return {
       },
     })
 
-    local servers = {
-      lua_ls = false,
-      basedpyright = false,
-      clangd = false,
-      ts_ls = false,
-      nixd = false,
-    }
-
-    for server_name, server_opts in pairs(servers) do
-      if server_opts then
-        vim.lsp.config['server_name'] = server_opts
-      end
+    local servers = { 'lua_ls', 'basedpyright', 'clangd', 'ts_ls', 'nixd', 'rust_analyzer' }
+    for _, server_name in ipairs(servers) do
       vim.lsp.enable(server_name)
     end
   end,
