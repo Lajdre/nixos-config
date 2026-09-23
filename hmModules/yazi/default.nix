@@ -69,7 +69,7 @@ in
         }
         {
           on = "<C-n>";
-          run = ''shell 'ripdrag "$@" -x 2>/dev/null &' --confirm'';
+          run = "shell -- ripdrag %s -x 2>/dev/null &";
         }
         # {
         #   desc = "Enter the child directory, or open the file";
