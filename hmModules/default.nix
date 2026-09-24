@@ -24,5 +24,6 @@
     ./sioyek
     ./userDirs
     ./waybar
+    ./filePicker
   ];
 }

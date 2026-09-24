@@ -15,7 +15,10 @@
   };
 
   xdg.portal.enable = true;
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  xdg.portal.extraPortals = [
+    pkgs.xdg-desktop-portal-gtk
+    pkgs.xdg-desktop-portal-termfilechooser
+  ];
 
   # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.
