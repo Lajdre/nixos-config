@@ -2,6 +2,7 @@
 
 {
   home.packages = with pkgs; [
+    neovim
     rip2
     btop
     wget
