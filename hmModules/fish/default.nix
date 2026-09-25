@@ -32,6 +32,7 @@
       "v" = "nvim";
       "f" = "nvim";
       "h" = "nvim .";
+      "vimdiff" = "nvim -d";
       "S" = "v -c 'silent LoadDefaultSession'";
       "n" = "nvim ../.dev/notes.md";
       "p" = "python3";

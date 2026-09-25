@@ -30,42 +30,15 @@ let
   };
 in
 {
-  # programs.neovim = {
-  #   enable = true;
-  #   defaultEditor = true;
-  #   vimAlias = true;
-  #   vimdiffAlias = true;
-  #   withPython3 = true;
-  #   withRuby = true;
-  #   withNodeJs = false;
-  #   sideloadInitLua = true; # prob just use home.packages later
-  #
-  #   # this seems like a duplication (then a dir plugin is not needed)
-  #   # plugins = [
-  #   #   treesitterWithGrammars
-  #   # ];
-  # };
+  home.sessionVariables = {
+    NIX_TREESITTER_PARSERS = "${treesitter-parsers}";
+    NIX_TREESITTER_PATH = "${treesitterWithGrammars}";
+    EDITOR = "nvim";
+    VISUAL = "nvim";
+  };
 
   home.file.".config/nvim/" = {
     source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-config/nvim/";
     recursive = true;
   };
-
-  # home.file.".config/nvim-treesitter-parsers/nvim-treesitter-parsers.lua".text = ''
-  #   vim.opt.runtimepath:append("${treesitter-parsers}")
-  # '';
-
-  # this should not be there - no copies. Just point to the nix localtion via env var
-  # Treesitter is configured as a locally developed module in lazy.nvim
-  # We put it where lazy.nvim expects locally developed plugins (dev:path)
-  # home.file.".config/nixed_nvim/nvim-treesitter/" = {
-  #   source = treesitterWithGrammars;
-  #   recursive = true;
-  # };
-
-  home.sessionVariables.NIX_TREESITTER_PARSERS = "${treesitter-parsers}";
-  home.sessionVariables.NIX_TREESITTER_PATH = "${treesitterWithGrammars}";
-  # home.sessionVariables = {
-  #   NIXED_NVIM = "ziomale ponad lale";
-  # };
 }
