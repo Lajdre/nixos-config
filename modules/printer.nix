@@ -19,6 +19,8 @@
     ensureDefaultPrinter = "HP-DeskJet4530";
   };
   # enables support for SANE scanners; scanimage [-L]; sane-find-scanner;
-  hardware.sane.enable = true;
-  hardware.sane.extraBackends = [ pkgs.hplip ]; # pkgs.hplipWithPlugin
+  hardware.sane = {
+    enable = true;
+    extraBackends = [ pkgs.hplip ]; # pkgs.hplipWithPlugin
+  };
 }

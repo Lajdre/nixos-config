@@ -59,16 +59,4 @@
     builtins.elem (lib.getName pkg) [
       "vivaldi"
     ];
-
-  # ++
-  #
-  #   (with pkgs-stable; [
-  #     hello
-  #   ])
-  #
-  # ++
-  #
-  #   [
-  #     inputs.wezterm.packages.${pkgs.system}.default
-  #   ];
 }

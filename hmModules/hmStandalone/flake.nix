@@ -1,5 +1,5 @@
 {
-  description = "Home Manager configuration of lono";
+  description = "TODO some day. Home Manager configuration of lono";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
