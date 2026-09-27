@@ -1,27 +1,29 @@
 { config, pkgs, ... }:
 let
   treesitterWithGrammars = (
-    pkgs.vimPlugins.nvim-treesitter.withPlugins (p: [
-      p.python
-      p.c
-      p.cpp
-      p.lua
-      p.rust
-      p.bash
-      p.typescript
-      p.tsx
-      p.sql
-      p.nix
-      p.markdown
-      p.markdown_inline
-      p.regex
-      p.vimdoc
-      p.vim
-      p.fish
-      p.toml
-      p.typst
-      p.xml
-    ])
+    pkgs.vimPlugins.nvim-treesitter.withPlugins (
+      p: with p; [
+        python
+        c
+        cpp
+        lua
+        rust
+        bash
+        typescript
+        tsx
+        sql
+        nix
+        markdown
+        markdown_inline
+        regex
+        vimdoc
+        vim
+        fish
+        toml
+        typst
+        xml
+      ]
+    )
   );
 
   treesitter-parsers = pkgs.symlinkJoin {

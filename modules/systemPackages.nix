@@ -5,54 +5,51 @@
 }:
 
 {
-  environment.systemPackages = (
-    with pkgs;
-    [
-      # core
-      awww
-      rofi
-      wl-clipboard
-      swaynotificationcenter
-      libnotify
-      brave
-      hyprsunset
-      pavucontrol
-      alsa-utils
-      hyprshutdown
+  environment.systemPackages = with pkgs; [
+    # core
+    awww
+    rofi
+    wl-clipboard
+    swaynotificationcenter
+    libnotify
+    brave
+    hyprsunset
+    pavucontrol
+    alsa-utils
+    hyprshutdown
 
-      # apps
-      swayimg
-      vivaldi
-      libreoffice
-      webcord
-      vesktop
-      gimp3
-      zathura
-      firefox
-      element-desktop
+    # apps
+    swayimg
+    vivaldi
+    libreoffice
+    webcord
+    vesktop
+    gimp3
+    zathura
+    firefox
+    element-desktop
 
-      # utils
-      brightnessctl
-      zenity
-      xarchiver
-      overskride
-      gcolor3
-      v4l-utils
-      impala
+    # utils
+    brightnessctl
+    zenity
+    xarchiver
+    overskride
+    gcolor3
+    v4l-utils
+    impala
 
-      # screenshot utils
-      grim
-      slurp
-      swappy
-      hyprpicker
+    # screenshot utils
+    grim
+    slurp
+    swappy
+    hyprpicker
 
-      # escape hatch
-      distrobox
+    # escape hatch
+    distrobox
 
-      # for yazi
-      kitty
-    ]
-  );
+    # for yazi
+    kitty
+  ];
 
   nixpkgs.config.allowUnfreePredicate =
     pkg:
