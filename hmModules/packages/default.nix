@@ -53,5 +53,6 @@
     clang-tools
     pi-coding-agent
     typescript-language-server
+    signal-desktop
   ];
 }
