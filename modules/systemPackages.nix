@@ -46,9 +46,6 @@
 
     # escape hatch
     distrobox
-
-    # for yazi
-    kitty
   ];
 
   nixpkgs.config.allowUnfreePredicate =

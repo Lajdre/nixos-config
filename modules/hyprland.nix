@@ -18,5 +18,9 @@
       xdg-desktop-portal-gtk
       xdg-desktop-portal-termfilechooser
     ];
+    config.common = {
+      default = [ "gtk" ];
+      "org.freedesktop.impl.portal.FileChooser" = [ "termfilechooser" ];
+    };
   };
 }
