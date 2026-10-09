@@ -54,5 +54,7 @@
     pi-coding-agent
     typescript-language-server
     signal-desktop
+    jujutsu
+    tinymist
   ];
 }
