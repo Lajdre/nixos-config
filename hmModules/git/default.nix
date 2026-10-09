@@ -43,6 +43,18 @@
     programs.delta = {
       enable = true;
       enableGitIntegration = true;
+      enableJujutsuIntegration = false;
+    };
+
+    programs.difftastic = {
+      enable = true;
+      options.background = "dark";
+    };
+
+    programs.mergiraf = {
+      enable = true;
+      enableGitIntegration = true;
+      enableJujutsuIntegration = false;
     };
   };
 }
