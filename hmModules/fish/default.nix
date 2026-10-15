@@ -57,6 +57,8 @@
       "kk" = "source ~/.config/scripts/jump.fish k";
       "K" = "source ~/.config/scripts/jump.fish K";
       "linkd" = "~/.config/scripts/setup_dev.sh";
+      "encr" = "~/.config/scripts/encrypt.sh e";
+      "decr" = "~/.config/scripts/encrypt.sh d";
 
       # NixOS
       "reb" = "sudo nixos-rebuild switch --flake ~/nixos-config";
