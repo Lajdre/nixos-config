@@ -25,7 +25,6 @@
     webcord
     vesktop
     gimp3
-    zathura
     firefox
     element-desktop
 

@@ -22,6 +22,7 @@
     ./mimeApps
     ./mpv
     ./sioyek
+    ./zathura
     ./userDirs
     ./waybar
     ./kitty
